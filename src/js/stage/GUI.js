@@ -1,0 +1,93 @@
+import { GUI_Object, game, input, BitmapText, state, level } from 'melonjs';
+import { getDefaultFontSettings, startMakeshiftFlashAnimation, toggleResume } from './../renderables/entity-data.js';
+
+/**
+ * Button entity with an attached label and optional room redirection
+ */
+class MessageButtonEntity extends GUI_Object {
+    /**
+     * constructor
+     */
+    constructor(x, y, settings) {
+        settings.image = "BUTTONS";
+
+        settings.framewidth = 32;
+        settings.frameheight = 32;
+        settings.width = settings.framewidth;
+        settings.height = settings.frameheight;
+
+        // call the super constructor
+        super(x, y, settings);
+
+        // Inherit any custom properties defined in the tile map
+        this.settings = settings;
+
+        // Default custom settings if not defined in the tile map
+        this.settings.message ?? "Indubitably.";
+
+        // redirect is a string indicating a level to load when the button is pressed
+        this.settings.redirect ?? "";
+
+        // label is the text displayed next to the button
+        this.settings.label ?? "";
+
+        // Allow this entity to continue updates when the game is paused
+        this.updateWhenPaused = true;
+
+        // Set up animation states and the default animation
+        this.addAnimation("off", [0]);
+        this.addAnimation("on", [1]);
+        this.setCurrentAnimation("off");
+
+        // If there is no label, save rendering resources by not adding an extra object to the world, which would be invisible anyway
+        const defaultFontSettings = getDefaultFontSettings();
+        if (this.settings.label.length > 0) {
+            const label = new BitmapText(x + ( settings.framewidth * 1.5 ), y + ( settings.frameheight * 0.5 ), {
+                font: defaultFontSettings.font,
+                textAlign : "left",
+                textBaseline : "bottom",
+                text: this.settings.label,
+            });
+            // Use second parameter to control Z axis priority. Most entities including tiles will have a value < 1
+            game.world.addChild(label, 1);
+        }
+    }
+    
+    // Runs an action when the pointer enters the collision box
+    onOver(event) {
+        this.setCurrentAnimation("on");
+        return super.update(event);
+    }
+
+    // Runs an action when the pointer exits the collision box
+    onOut(event) {
+        this.setCurrentAnimation("off");
+        return super.update(event);
+    }
+
+    // Update callback which is called every interval
+    update(dt) {
+        // Allow the space bar to close the message prompt
+        // Also close the message when focussing away from the window and returning to it
+        // (this avoids a weird situation where the game can resume but the message doesn't close)
+        if (input.isKeyPressed("space") || !state.isPaused()) {
+            toggleResume(true, "");
+        }
+        return super.update(dt);
+    }
+
+    // Click event
+    onClick(event) {
+        if (this.settings.redirect) {
+            // Makes the game flash and then load the main game
+            startMakeshiftFlashAnimation();
+            level.load(this.settings.redirect);
+            return false;
+        }
+        // Pause the game to provide time to read the messages
+        toggleResume(false, this.settings.message);
+        return false;
+    }
+};
+
+export default MessageButtonEntity;
