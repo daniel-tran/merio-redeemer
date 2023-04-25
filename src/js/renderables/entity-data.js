@@ -160,43 +160,9 @@ export function toggleResume(isResuming, message) {
 // Gets all possible messages + submessages that the Box guys can display. Mostly used in the BoxGuyEntity init callback.
 export function getAllMessages() {
     return [
-        ["Hey ho, Merio! We're finally living in the future! Through an internet browser! Using those new-fangled \"HTML\" and \"JavaScript\" doodads that those technical folks keep whining about. And look! The game doesn't lag anymore when you move around! Anyway, you'd better get going to progress on your adventure - I'm starting to get motion sickness from all the physics optimisations in this game engine..."],
-        ["Watch the enemy's movements carefully and use the power of the arrow keys to outsmart them!"],
-        ["To complete your haphazard quest to find happiness, you'll need to jump through these jiggling portals. This particular portal smells like kerosene. Mmmm..."],
-
-        ["My cousins work here as moving platforms, so they'll give you a ride to wherever they feel like going."],
-        ["These snowmen are on strike for higher wages and better working conditions. Crush those lads like their corporate overlords would!", "But remember, if you try to jump on multiple stacks of snowmen, they can do a surprise attack that hurts you."],
-        ["Using the magical art of \"collision detection\", you can do a boosted jump when you get sandwiched by moving platforms. It's as if you're immune to the laws of physics!"],
-
-        ["Y'see that pink space dust over there? Inhaling that stuff makes you all floaty and stuff!", "Remember, the effects of the space dust are only active when you're within the pink area, although you can extend its duration by jumping out of it."],
-        ["Cows? In space? I guess that's why they call our galaxy \"The Milky Way\"! Hah!", "Anyway, if you can make them fall asleep, you can pass by them without getting hurt."],
-        ["This next part of the level looks like a real doozy. You'll have to time your jumps and movements just right to make it over those cow-faced scoundrels."],
-        ["I'm going to be blunt with you, Merio - this guy is BIG. Bigger than those Poppin Fresh guys from the first game, I'm pretty sure. And it looks like it's willing to do everything in its power to stop you from finding happiness.", "But don't let its speed or size fool you. It appears to tire itself out every now and then, but tends to wake up randomly so you'll need to pick a good opportunity to run past it..."],
-
-        ["GOOD DAY TO YOU, MERIO.",
-         "Merio: Good day to me too.",
-         "YOU HAVE COME TO SEEK ANSWERS TO YET ANOTHER ONE OF LIFE'S MANY QUESTIONS?",
-         "Merio: Yeah, although now that I think about it, I could have just looked for answers on the Internet...",
-         "WELL, SINCE YOU'RE HERE NOW, I MAY AS WELL TRY TO ANSWER YOUR QUESTION.",
-         "Merio: Okay - How do I find happiness?",
-         "AH, A FINE QUESTION INDEED. HAPPINESS IS FOUND IN ONE OF THE MOST UNEXPECTED WAYS.",
-         "MANY PEOPLE HAVE SPENT YEARS TRYING TO FIND HAPPINESS, ONLY TO REGRET THEIR EFFORTS.",
-         "ARE YOU PREPARED TO HAVE YOUR MIND BLOWN BY MY EPIC RESPONSE?",
-         "BECAUSE WHAT I AM ABOUT TO TELL YOU CANNOT BE UNTOLD --",
-         "Merio: Just tell the answer already, you blockhead.",
-         "VERY WELL THEN.",
-         "HAPPINESS IS FOUND BY KNOWING YOU HAVE COMPLETED THIS GAME.",
-         "THERE, THE SECRET OF THE AGES HAS BEEN REVEALED TO YOU.",
-         "I CAN SENSE YOU ARE NOW SLIGHTLY HAPPIER THAN USUAL.",
-         "Merio: Well, I was kind of expecting to find more happiness...",
-         "CORRECTIMUNDO, BUT YOU STILL FOUND SOME HAPPINESS NONETHELESS?",
-         "Merio: ...",
-         "...",
-         "Merio: ...I suppose so.",
-         "GOOD! MY JOB HERE IS DONE.",
-         "Merio: Now that I've finished my adventure, what now?",
-         "YOU COULD TRY AND ACHIEVE SOME OF YOUR OTHER LIFE GOALS?",
-         "Merio: Life has MORE goals?! That implies there's yet another sequel in the works..."],
+        ["Merio, my boy? Is that really you?! I almost didn't recognise you with your brand new walking animations and all. And to think that you were content with sliding around the floor like a troglodyte for the last 3 games. Well, I hope you've still got the moves and/or a working keyboard because I sure don't."],
+        ["Enjoy the ability to hang onto edges with your hair while you can before male pattern baldness kicks in."],
+        ["Did you know... YOU HAD A LONG LOST FAMILY RELATIVE?!", "Merio: Yep.", "Oh, okay. In any case, he's waiting for you in one of the later levels, probably to ask you for money again.", "Merio: Yeah, that sounds about right."],
     ];
 }
 

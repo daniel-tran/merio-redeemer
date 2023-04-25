@@ -26,6 +26,7 @@ import FlashBlockEntity from 'js/renderables/flash-block.js';
 import FlashBlockTriggerEntity from 'js/renderables/flash-block-trigger.js';
 import BoxGuyEntity from 'js/renderables/blockguy.js';
 import MoveBlockEntity from 'js/renderables/move-block.js';
+import SuperJumpEntity from 'js/renderables/super-jump.js';
 import MessageButtonEntity from 'js/stage/GUI.js';
 import { manualMessageUpdate } from 'js/renderables/entity-data.js';
 
@@ -95,6 +96,7 @@ device.onReady(() => {
         pool.register("ChasmEntity", ChasmEntity);
         pool.register("BoxGuyEntity", BoxGuyEntity);
         pool.register("MoveBlockEntity", MoveBlockEntity);
+        pool.register("SuperJumpEntity", SuperJumpEntity);
         pool.register("MessageButtonEntity", MessageButtonEntity);
 
         // Various key bindings for use in js\entities\entities.js

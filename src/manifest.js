@@ -34,6 +34,16 @@ const DataManifest = [
         src: "data/img/all-tiles.png"
     },
     {   
+        name: "foreground-large",
+        type: "tsx",
+        src: "data/map/foreground-large.json"
+    },
+    {   
+        name: "foreground-large",
+        type:"image",
+        src: "data/img/backdrop/foreground-large.png"
+    },
+    {   
         name: "MERIO",
         type:"image",
         src: "data/img/sprites/MERIO.png"

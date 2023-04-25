@@ -128,7 +128,10 @@ import { getDefaultFontSettings, isGameLevel } from './../renderables/entity-dat
      * update function
      */
     update( dt ) {
-        if (isGameLevel() && this.score !== game.data.score) {
+        if (!isGameLevel()) {
+            // Hide the score when on a splash screen or similar place
+            this.setText("");
+        } else if (this.score !== game.data.score) {
             this.score = game.data.score;
             this.setText(`Brownie Points: ${this.score}`);
             this.isDirty = true;

@@ -77,7 +77,7 @@ Starting from 14.0.0, MelonJS has changedd the way that checks are done against 
 
 Credits
 -------------------------------------------------------------------------------
-Special credit to PWL and ansimuz from [OpenGameArt.org](https://opengameart.org) for their public domain art resources.
+Special credit to West, PWL and ansimuz from [OpenGameArt.org](https://opengameart.org) for their public domain art resources.
 
 Questions, need help ?
 -------------------------------------------------------------------------------
