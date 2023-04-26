@@ -24,6 +24,11 @@ const DataManifest = [
         src: "data/map/level1.tmx"
     },
     {   
+        name: "level2",
+        type: "tmx",
+        src: "data/map/level2.tmx"
+    },
+    {   
         name: "all-tiles",
         type: "tsx",
         src: "data/map/all-tiles.json"
@@ -97,6 +102,11 @@ const DataManifest = [
         name: "backdrop-town",
         type:"image",
         src: "data/img/backdrop/backdrop-town.png"
+    },
+    {   
+        name: "backdrop-dessert-plains",
+        type:"image",
+        src: "data/img/backdrop/backdrop-dessert-plains.png"
     },
     {
         name: "theme-town",

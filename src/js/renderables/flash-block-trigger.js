@@ -11,23 +11,42 @@ class FlashBlockTriggerEntity extends Collectable {
 
        // Call parent constructor to apply the custom changes
        super(x, y , settings);
+
+       // Inherit any custom properties defined in the tile map
+       this.settings = settings;
+
+       // Update the entity when outside the viewport
+       this.alwaysUpdate = true;
+
+       // Indicates whether this specific instance was responsible for the flash transition
+       this.isSourceOfTrigger = false;
+
+       // Specify the time increment when activated, which can shorten the overall duration.
+       // If defined, larger values result in a shorter duration.
+       // If undefined, this will default to 1 (i.e. duration is normal and ticks down at the standard rate)
+       this.timerStep = this.settings.timerStep ?? 1;
     }
-    
+
     onCollision(response, other) {
        if (detectMerio(other.name) && game.data.flashBlockTimer >= game.data.flashBlockTimerMax) {
            this.setOpacity(0);
            game.data.flashBlockTimer = 0;
+           this.isSourceOfTrigger = true;
        }
        return false;
     }
 
     update(dt) {
        if (game.data.flashBlockTimer < game.data.flashBlockTimerMax) {
-           game.data.flashBlockTimer++;
+           if (this.isSourceOfTrigger) {
+               // Only one instance can increment the timer, otherwise the interval gets progressively shorter with more instances
+               game.data.flashBlockTimer += this.timerStep;
+           }
            // Opacity increases while the timer is active
            this.setOpacity(game.data.flashBlockTimer / game.data.flashBlockTimerMax);
        } else {
            this.setOpacity(1);
+           this.isSourceOfTrigger = false;
        }
 
        // Evaluates to true if this moved or the update function was called

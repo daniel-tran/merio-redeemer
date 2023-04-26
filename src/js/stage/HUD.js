@@ -1,5 +1,5 @@
 import { Container, game, event, Renderable, Vector2d, BitmapText, loader } from 'melonjs';
-import { getDefaultFontSettings, isGameLevel } from './../renderables/entity-data.js';
+import { getDefaultFontSettings, isGameLevel, playBGM, resetFlashBlockData } from './../renderables/entity-data.js';
 
 /**
  * a basic control to toggle fullscreen on/off
@@ -128,9 +128,14 @@ import { getDefaultFontSettings, isGameLevel } from './../renderables/entity-dat
      * update function
      */
     update( dt ) {
+        // This is present in all screens, so it can be used to determine the background music.
+        playBGM();
+
         if (!isGameLevel()) {
             // Hide the score when on a splash screen or similar place
             this.setText("");
+            // This is to ensure a second play loads the flash blocks & their triggers cleanly
+            resetFlashBlockData();
         } else if (this.score !== game.data.score) {
             this.score = game.data.score;
             this.setText(`Brownie Points: ${this.score}`);

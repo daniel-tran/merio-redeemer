@@ -163,6 +163,11 @@ export function getAllMessages() {
         ["Merio, my boy? Is that really you?! I almost didn't recognise you with your brand new walking animations and all. And to think that you were content with sliding around the floor like a troglodyte for the last 3 games. Well, I hope you've still got the moves and/or a working keyboard because I sure don't."],
         ["Enjoy the ability to hang onto edges with your hair while you can before male pattern baldness kicks in."],
         ["Did you know... YOU HAD A LONG LOST FAMILY RELATIVE?!", "Merio: Yep.", "Oh, okay. In any case, he's waiting for you in one of the later levels, probably to ask you for money again.", "Merio: Yeah, that sounds about right."],
+
+        ["Whee! Getting shot out of a cannon never gets old. Anyway, this place has naturally occurring fairy floss that makes platforms briefly appear for some reason when eaten."],
+        ["So, overrunning that burning city from one of the previous games wasn't enough for these donut delinquents, eh? Jump on them before they take over another place that people sort of care about."],
+        ["Okay, Merio, this is the game plan: You rush these donuts, open the gate, jump over to the other fairy floss and KEEP EATING until you see a good opening to get past those dust guys. You can thank me later, but your liver and other vital organs certainly won't."],
+        ["Honestly, that last cannon was an absolute dud. But I've got a good feeling about this one because it smells like pork rinds."],
     ];
 }
 
