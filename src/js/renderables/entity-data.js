@@ -168,6 +168,14 @@ export function getAllMessages() {
         ["So, overrunning that burning city from one of the previous games wasn't enough for these donut delinquents, eh? Jump on them before they take over another place that people sort of care about."],
         ["Okay, Merio, this is the game plan: You rush these donuts, open the gate, jump over to the other fairy floss and KEEP EATING until you see a good opening to get past those dust guys. You can thank me later, but your liver and other vital organs certainly won't."],
         ["Honestly, that last cannon was an absolute dud. But I've got a good feeling about this one because it smells like pork rinds."],
+
+        ["Looks like those lazy lumberjacks I hired left all their equipment lying around AGAIN. That's it, I want to see their manager right now!",
+         "While that's happening, you can move the boxes containing their stuff by repeatedly tapping the LEFT or RIGHT key while facing it to push it a little bit."],
+        ["Don't push that box all the way! You'll need it to give you extra height and make the jump over that chasm ahead."],
+        ["Alright, it's that point in the game where you really get to abuse the physics engine and violate the laws of motion, so listen up.",
+         "When you eat that fairy floss, the box of axes is going to briefly jump up. If you can get it to land on your hair at a particular angle, it'll get kicked right over there so you can climb the wall. But once it's in place, you only have one chance to get over it, so make it count! See you on the other side...that is if you can make it there."],
+        ["Whoowee! I totally didn't question your ability to get to this point, so good on you!",
+         "To get to the last cannon, you'll have to pass by these pudgy looking bears. They've got a weird thing going, so I suggest watching them for a bit to find a good way to get past them without being jumped on."],
     ];
 }
 

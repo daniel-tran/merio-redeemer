@@ -16,7 +16,7 @@
   <object id="29" name="MessageButtonEntity" x="32" y="64" width="32" height="32">
    <properties>
     <property name="label" value="Start Game"/>
-    <property name="redirect" value="level2"/>
+    <property name="redirect" value="level3"/>
    </properties>
   </object>
  </objectgroup>

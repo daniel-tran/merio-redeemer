@@ -21,6 +21,7 @@ import SecretCollectableEntity from 'js/renderables/collectable.js';
 import MonstoidEntity from 'js/renderables/enemy-monstoid.js';
 import DustGuyEntity from 'js/renderables/enemy-dustguy.js';
 import DonutEntity from 'js/renderables/enemy-donut.js';
+import BossEntity from 'js/renderables/enemy-boss.js';
 import ChasmEntity from 'js/renderables/enemy-chasm.js';
 import FlashBlockEntity from 'js/renderables/flash-block.js';
 import FlashBlockTriggerEntity from 'js/renderables/flash-block-trigger.js';
@@ -91,6 +92,7 @@ device.onReady(() => {
         pool.register("MonstoidEntity", MonstoidEntity);
         pool.register("DustGuyEntity", DustGuyEntity);
         pool.register("DonutEntity", DonutEntity);
+        pool.register("BossEntity", BossEntity);
         pool.register("FlashBlockEntity", FlashBlockEntity);
         pool.register("FlashBlockTriggerEntity", FlashBlockTriggerEntity);
         pool.register("ChasmEntity", ChasmEntity);

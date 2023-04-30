@@ -28,6 +28,11 @@ const DataManifest = [
         type: "tmx",
         src: "data/map/level2.tmx"
     },
+    {
+        name: "level3",
+        type: "tmx",
+        src: "data/map/level3.tmx"
+    },
     {   
         name: "all-tiles",
         type: "tsx",
@@ -74,6 +79,11 @@ const DataManifest = [
         src: "data/img/sprites/DONUT.png"
     },
     {   
+        name: "BEARS",
+        type:"image",
+        src: "data/img/sprites/BEARS.png"
+    },
+    {   
         name: "FLASHBLOCK",
         type:"image",
         src: "data/img/sprites/FLASHBLOCK.png"
@@ -107,6 +117,11 @@ const DataManifest = [
         name: "backdrop-dessert-plains",
         type:"image",
         src: "data/img/backdrop/backdrop-dessert-plains.png"
+    },
+    {   
+        name: "backdrop-mist-forest",
+        type:"image",
+        src: "data/img/backdrop/backdrop-mist-forest.png"
     },
     {
         name: "theme-town",
