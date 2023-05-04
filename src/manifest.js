@@ -33,6 +33,11 @@ const DataManifest = [
         type: "tmx",
         src: "data/map/level3.tmx"
     },
+    {
+        name: "level-final",
+        type: "tmx",
+        src: "data/map/level-final.tmx"
+    },
     {   
         name: "all-tiles",
         type: "tsx",
@@ -108,6 +113,11 @@ const DataManifest = [
         type:"image",
         src: "data/img/sprites/LIFES.png"
     },
+    {
+        name: "WERIO",
+        type:"image",
+        src: "data/img/sprites/WERIO.png"
+    },
     {   
         name: "backdrop-town",
         type:"image",
@@ -124,6 +134,11 @@ const DataManifest = [
         src: "data/img/backdrop/backdrop-mist-forest.png"
     },
     {
+        name: "backdrop-final",
+        type:"image",
+        src: "data/img/backdrop/backdrop-final.png"
+    },
+    {
         name: "theme-town",
         type: "audio",
         src: "data/bgm/"
@@ -135,6 +150,11 @@ const DataManifest = [
     },
     {
         name: "theme-mist-forest",
+        type: "audio",
+        src: "data/bgm/"
+    },
+    {
+        name: "theme-final",
         type: "audio",
         src: "data/bgm/"
     },

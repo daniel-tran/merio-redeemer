@@ -7,7 +7,7 @@ import { getAllMessages, startMakeshiftFlashAnimation, toggleResume, detectMerio
 class BoxGuyEntity extends Collectable {
     constructor(x, y, settings) {
         // Define the sprite here instead of in the tilemap
-        settings.image = "BOXGUY";
+        settings.image = settings.image ?? "BOXGUY";
 
         // Call parent constructor to apply the custom changes
         super(x, y , settings);

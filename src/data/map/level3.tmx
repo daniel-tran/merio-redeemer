@@ -45,8 +45,8 @@
   <object id="33" name="me.Trigger" x="6208" y="0" width="192" height="32">
    <properties>
     <property name="duration" type="int" value="150"/>
-    <property name="fade" value="#fff"/>
-    <property name="to" value="_startmenu"/>
+    <property name="fade" type="color" value="#ffffffff"/>
+    <property name="to" value="level-final"/>
    </properties>
   </object>
   <object id="95" name="SuperJumpEntity" x="6368" y="288" width="32" height="192"/>

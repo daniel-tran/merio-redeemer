@@ -92,7 +92,7 @@ export function playBGM() {
         case "level1": expectedBGM = "theme-town"; break;
         case "level2": expectedBGM = "theme-dessert-plains"; break;
         case "level3": expectedBGM = "theme-mist-forest"; break;
-        case "level_final": expectedBGM = "theme-dessert-plains"; break;
+        case "level-final": expectedBGM = "theme-final"; break;
         case "_startmenu": expectedBGM = audio.stopTrack(); break;
         case "gameover": audio.stopTrack(); break;
     }
@@ -176,6 +176,19 @@ export function getAllMessages() {
          "When you eat that fairy floss, the box of axes is going to briefly jump up. If you can get it to land on your hair at a particular angle, it'll get kicked right over there so you can climb the wall. But once it's in place, you only have one chance to get over it, so make it count! See you on the other side...that is if you can make it there."],
         ["Whoowee! I totally didn't question your ability to get to this point, so good on you!",
          "To get to the last cannon, you'll have to pass by these pudgy looking bears. They've got a weird thing going, so I suggest watching them for a bit to find a good way to get past them without being jumped on."],
+
+        ["There he is, just standing there menacingly. Press the DOWN key to talk to him when you get close enough."],
+        ["Merio: Hopefully it was worth being shot out of a cannon 3 times to hear what you have to say...",
+         "RIGHTO, I WILL KEEP THIS CONCISE BECAUSE I KNOW YOU HAVE A TERRIBLE ATTENTION SPAN.",
+         "VEhJUyBNSUdIVCBCRSBUSEUgTEFTVCBHQU1FIFlPVSBXSUxMIEVWRVIgU1RBUiBJTiwgQlVUIFlPVSBXRVJFIEEgR1JFQVQg\nSEVSTyBBTkQgV0lMTCBJTlNQSVJFIFRIRSBORVhUIEdFTkVSQVRJT04gVE8gRE8gRVZFTiBNT1JFIEhBSVItVEFDVUxBUiBGRUFUUy4=",
+         "Merio: Wait, what?",
+         "YES, I UNDERSTAND THIS CAN BE DIFFICULT TO PROCESS, BUT IN DUE TIME YOU WILL COME TO TERMS WITH IT.",
+         "AND NO, I WILL NOT REPEAT IT BECAUSE I AM A HUGE JERK.",
+         "Merio: Well, that was a gigantic waste of time. Got anything else to disappoint me with?",
+         "I ALSO NEED A FEW THOUSAND DOLLARS ONCE AGAIN.",
+         "Merio: Look, you can take these weird Brownie Points I've been picking up. You could probably cash them in for, like, a can of soda or an old boot.",
+         "THANK YOU MERIO, I KNEW I COULD ALWAYS TRUST IN YOU.",
+         "Merio: Now to get back to the start menu and goof around until I find something better to do with my life."],
     ];
 }
 
@@ -183,6 +196,7 @@ export function getAllMessages() {
 export function manualMessageUpdate() {
     // Note: me.game.world.getChildByName() is computationally expensive, so try not to do this all the time.
     let boxguys = game.world.getChildByName("BoxGuyEntity");
+    boxguys.push(...game.world.getChildByName("NpcWerioEntity"));
 
     // When no box guys are on the level, just treat the message as a one-message interaction
     if (boxguys.length <= 0) {
