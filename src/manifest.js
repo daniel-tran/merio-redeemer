@@ -48,6 +48,16 @@ const DataManifest = [
         type:"image",
         src: "data/img/all-tiles.png"
     },
+    {
+        name: "LOGO",
+        type: "tsx",
+        src: "data/map/LOGO.json"
+    },
+    {
+        name: "LOGO",
+        type:"image",
+        src: "data/img/gui/LOGO.png"
+    },
     {   
         name: "foreground-large",
         type: "tsx",
@@ -118,6 +128,11 @@ const DataManifest = [
         type:"image",
         src: "data/img/sprites/WERIO.png"
     },
+    {
+        name: "backdrop-startmenu",
+        type:"image",
+        src: "data/img/backdrop/backdrop-startmenu.png"
+    },
     {   
         name: "backdrop-town",
         type:"image",
@@ -137,6 +152,11 @@ const DataManifest = [
         name: "backdrop-final",
         type:"image",
         src: "data/img/backdrop/backdrop-final.png"
+    },
+    {
+        name: "theme-startmenu",
+        type: "audio",
+        src: "data/bgm/"
     },
     {
         name: "theme-town",

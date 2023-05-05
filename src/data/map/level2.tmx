@@ -15,13 +15,6 @@
  </layer>
  <objectgroup id="5" name="Player">
   <object id="6" name="mainPlayer" x="32" y="32" width="48" height="48"/>
-  <object id="33" name="me.Trigger" x="6208" y="0" width="192" height="32">
-   <properties>
-    <property name="duration" type="int" value="150"/>
-    <property name="fade" value="#fff"/>
-    <property name="to" value="_startmenu"/>
-   </properties>
-  </object>
   <object id="105" name="BoxGuyEntity" x="4384" y="64" width="48" height="48">
    <properties>
     <property name="messageIndex" type="int" value="5"/>
@@ -39,25 +32,13 @@
   </data>
  </layer>
  <objectgroup id="14" name="NextLevel">
-  <object id="108" name="me.Trigger" x="6208" y="0" width="192" height="32">
+  <object id="109" name="SuperJumpEntity" x="6368" y="288" width="32" height="192"/>
+  <object id="110" name="SuperJumpEntity" x="6272" y="64" width="128" height="192"/>
+  <object id="33" name="me.Trigger" x="6208" y="0" width="192" height="32">
    <properties>
     <property name="duration" type="int" value="150"/>
-    <property name="fade" value="#fff"/>
-    <property name="to" value="_startmenu"/>
-   </properties>
-  </object>
-  <object id="109" name="SuperJumpEntity" x="6368" y="288" width="32" height="192">
-   <properties>
-    <property name="duration" type="int" value="150"/>
-    <property name="fade" value="#fff"/>
-    <property name="to" value="_startmenu"/>
-   </properties>
-  </object>
-  <object id="110" name="SuperJumpEntity" x="6272" y="64" width="128" height="192">
-   <properties>
-    <property name="duration" type="int" value="150"/>
-    <property name="fade" value="#fff"/>
-    <property name="to" value="_startmenu"/>
+    <property name="fade" type="color" value="#ffffffff"/>
+    <property name="to" value="level3"/>
    </properties>
   </object>
  </objectgroup>
@@ -217,11 +198,7 @@
     <property name="active" type="bool" value="false"/>
    </properties>
   </object>
-  <object id="98" x="6400" y="0" width="32" height="640">
-   <properties>
-    <property name="active" type="bool" value="true"/>
-   </properties>
-  </object>
+  <object id="98" x="6400" y="0" width="32" height="640"/>
   <object id="99" name="FlashBlockEntity" x="5856" y="320" width="160" height="160">
    <properties>
     <property name="active" type="bool" value="false"/>
