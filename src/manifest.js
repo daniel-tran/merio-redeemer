@@ -38,6 +38,11 @@ const DataManifest = [
         type: "tmx",
         src: "data/map/level-final.tmx"
     },
+    {
+        name: "gameover",
+        type: "tmx",
+        src: "data/map/gameover.tmx"
+    },
     {   
         name: "all-tiles",
         type: "tsx",
@@ -57,6 +62,17 @@ const DataManifest = [
         name: "LOGO",
         type:"image",
         src: "data/img/gui/LOGO.png"
+    },
+    /* Even though the dying image is just an Image Layer in the map, it still needs a corresponding tileset even though it's unused */
+    {
+        name: "STABBED",
+        type: "tsx",
+        src: "data/map/LOGO.json"
+    },
+    {
+        name: "STABBED",
+        type:"image",
+        src: "data/img/gui/STABBED.png"
     },
     {   
         name: "foreground-large",
@@ -152,6 +168,11 @@ const DataManifest = [
         name: "backdrop-final",
         type:"image",
         src: "data/img/backdrop/backdrop-final.png"
+    },
+    {
+        name: "backdrop-gameover",
+        type:"image",
+        src: "data/img/backdrop/backdrop-gameover.png"
     },
     {
         name: "theme-startmenu",
