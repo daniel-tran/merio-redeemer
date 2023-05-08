@@ -1,10 +1,10 @@
-import { GUI_Object, game, input, BitmapText, state, level } from 'melonjs';
+import { GUI_Object, game, input, BitmapText, state, level, Vector2d, event } from 'melonjs';
 import { getDefaultFontSettings, startMakeshiftFlashAnimation, toggleResume } from './../renderables/entity-data.js';
 
 /**
  * Button entity with an attached label and optional room redirection
  */
-class MessageButtonEntity extends GUI_Object {
+export class MessageButtonEntity extends GUI_Object {
     /**
      * constructor
      */
@@ -90,4 +90,31 @@ class MessageButtonEntity extends GUI_Object {
     }
 };
 
-export default MessageButtonEntity;
+/**
+ * A label used to show the high score on the start menu
+ */
+export class HighScoreEntity extends BitmapText {
+    /**
+     * constructor
+     */
+    constructor(x, y) {
+        // call the super constructor
+        super(
+            x,
+            y,
+            {
+                font : "Verdana",
+                textAlign : "center",
+                textBaseline : "middle",
+                text : `High Score: ${game.data.highScore}`
+            }
+        );
+
+        this.relative = new Vector2d(x, y);
+
+        // recalculate the object position if the canvas is resize
+        event.on(event.CANVAS_ONRESIZE, (function(w, h){
+            this.pos.set(w, h, 0).add(this.relative);
+        }).bind(this));
+    }
+};

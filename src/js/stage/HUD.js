@@ -1,5 +1,5 @@
-import { Container, game, event, Renderable, Vector2d, BitmapText, loader } from 'melonjs';
-import { getDefaultFontSettings, isGameLevel, playBGM, resetFlashBlockData } from './../renderables/entity-data.js';
+import { Container, game, event, Renderable, Vector2d, BitmapText, loader, level } from 'melonjs';
+import { getDefaultFontSettings, isGameLevel, playBGM, resetFlashBlockData, resetScoreAndLives } from './../renderables/entity-data.js';
 
 /**
  * a basic control to toggle fullscreen on/off
@@ -134,13 +134,20 @@ import { getDefaultFontSettings, isGameLevel, playBGM, resetFlashBlockData } fro
         if (!isGameLevel()) {
             // Hide the score when on a splash screen or similar place
             this.setText("");
-            // This is to ensure a second play loads the flash blocks & their triggers cleanly
+            // This is to ensure a second play loads a new game cleanly
             resetFlashBlockData();
+            resetScoreAndLives();
         } else if (this.score !== game.data.score) {
             this.score = game.data.score;
             this.setText(`Brownie Points: ${this.score}`);
             this.isDirty = true;
         }
+
+        // Update high score only when the game has "finished"
+        if (level.getCurrentLevel().name === "level-final" && game.data.score > game.data.highScore) {
+            game.data.highScore = game.data.score;
+        }
+
         return super.update(dt);
     }
 };

@@ -29,7 +29,7 @@ import BoxGuyEntity from 'js/renderables/blockguy.js';
 import MoveBlockEntity from 'js/renderables/move-block.js';
 import SuperJumpEntity from 'js/renderables/super-jump.js';
 import NpcWerioEntity from 'js/renderables/npc-werio.js';
-import MessageButtonEntity from 'js/stage/GUI.js';
+import { MessageButtonEntity, HighScoreEntity } from 'js/stage/GUI.js';
 import { manualMessageUpdate } from 'js/renderables/entity-data.js';
 
 import DataManifest from 'manifest.js';
@@ -58,6 +58,7 @@ device.onReady(() => {
         // score and lives. These are set in play.js when it realises a new game is starting
         score : 0,
         lives : 0,
+        highScore : 0,
         // Indicates if flash blocks are to be rendered as usable. These are set in play.js when it realises a new game is starting
         flashBlockTimer : 0,
         flashBlockTimerMax : 0,
@@ -102,6 +103,7 @@ device.onReady(() => {
         pool.register("SuperJumpEntity", SuperJumpEntity);
         pool.register("NpcWerioEntity", NpcWerioEntity);
         pool.register("MessageButtonEntity", MessageButtonEntity);
+        pool.register("HighScoreEntity", HighScoreEntity);
 
         // Various key bindings for use in js\entities\entities.js
         input.bindKey(input.KEY.LEFT, "left");
