@@ -94,7 +94,8 @@ export function playBGM() {
         case "level3": expectedBGM = "theme-mist-forest"; break;
         case "level-final": expectedBGM = "theme-final"; break;
         case "_startmenu": expectedBGM = "theme-startmenu"; break;
-        case "gameover": audio.stopTrack(); break;
+        case "gameover":
+        case "gameover-alternate": audio.stopTrack(); break;
     }
 
     // Only play the music if isn't already playing, otherwises the music will reset to the beginning
@@ -122,8 +123,26 @@ export function isGameLevel() {
 
 // Uses existing properties in game.data to create a fresh game (properties found in index.js)
 export function resetScoreAndLives() {
-    game.data.lives = game.data.initialLives;
-    game.data.score = game.data.initialScore;
+    if (!game.data.useAltMode) {
+        game.data.lives = game.data.initialLives;
+        hardResetScore();
+    } else {
+        // In Alt Mode, score penalties should carry over from each previous replay, so score shouldn't be reset here
+        game.data.lives = game.data.initialAltModeLives;
+    }
+}
+
+// Forcefully resets the score. Intended to be used on the start menu or on the final game over screen.
+export function hardResetScore() {
+    game.data.score = !game.data.useAltMode ? game.data.initialScore : game.data.initialAltModeScore;
+}
+
+// Resets all the Alt Mode specific settings that can be modified when dying
+export function resetAltModeSettings() {
+    game.data.altModeGameOverScreen = game.data.initialAltModeGameOverScreen;
+    game.data.altModePenaltyScore = game.data.initialAltModePenaltyScore;
+    game.data.altModePenaltyTimer = game.data.initialAltModePenaltyTimer;
+    game.data.altModePenaltyTimerMax = game.data.initialAltModePenaltyTimerMax;
 }
 
 // Uses existing properties in game.data to restore all flash blocks and their triggers to their original states (properties found in index.js)

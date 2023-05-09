@@ -1,5 +1,5 @@
 import { Stage, game, ColorLayer, BitmapText, level, audio } from 'melonjs';
-import { resetScoreAndLives, resetFlashBlockData, playBGM } from '../renderables/entity-data.js';
+import { resetScoreAndLives, resetFlashBlockData, resetAltModeSettings, playBGM } from '../renderables/entity-data.js';
 import UIContainer from './HUD.js';
 
 class PlayScreen extends Stage {
@@ -19,6 +19,7 @@ class PlayScreen extends Stage {
         if (game.data.lives <= 0) {
             resetScoreAndLives();
             resetFlashBlockData();
+            resetAltModeSettings();
         }
 
         // add our HUD to the game world

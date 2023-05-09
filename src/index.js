@@ -29,7 +29,8 @@ import BoxGuyEntity from 'js/renderables/blockguy.js';
 import MoveBlockEntity from 'js/renderables/move-block.js';
 import SuperJumpEntity from 'js/renderables/super-jump.js';
 import NpcWerioEntity from 'js/renderables/npc-werio.js';
-import { MessageButtonEntity, HighScoreEntity } from 'js/stage/GUI.js';
+import RevivalPortalEntity from 'js/renderables/revival-portal.js';
+import { MessageButtonEntity, HighScoreEntity, AltModeButtonEntity } from 'js/stage/GUI.js';
 import { manualMessageUpdate } from 'js/renderables/entity-data.js';
 
 import DataManifest from 'manifest.js';
@@ -55,6 +56,15 @@ device.onReady(() => {
         initialScore: 0,
         initialLives: 3,
         initialFlashBlockTimer: 500,
+        initialAltModePenaltyTimer: 200,
+        initialAltModePenaltyTimerMax: 200,
+        initialAltModePenaltyScore: 250000,
+        initialAltModePenaltyTimerScale: 2,
+        initialAltModePenaltyScoreScale: 2,
+        initialAltModeScore: 5000000,
+        initialAltModeLives: 1,
+        initialAltModeGameOverScreen: "gameover-alternate",
+        altModePenaltyTimerStep: 1,
         // score and lives. These are set in play.js when it realises a new game is starting
         score : 0,
         lives : 0,
@@ -62,6 +72,15 @@ device.onReady(() => {
         // Indicates if flash blocks are to be rendered as usable. These are set in play.js when it realises a new game is starting
         flashBlockTimer : 0,
         flashBlockTimerMax : 0,
+        // Flag to specify if Alt Mode is active or not
+        useAltMode : false,
+        // Variable to remember which level to replay after respawning in Alt Mode
+        currentGameLevel: "",
+        // Alt Mode settings which are set initially in play.js
+        altModePenaltyScore: 0,
+        altModePenaltyTimer: 0,
+        altModePenaltyTimerMax: 0,
+        altModeGameOverScreen: "",
     };
     
     // User-defined collision types are defined using BITWISE LEFT-SHIFT:
@@ -102,8 +121,10 @@ device.onReady(() => {
         pool.register("MoveBlockEntity", MoveBlockEntity);
         pool.register("SuperJumpEntity", SuperJumpEntity);
         pool.register("NpcWerioEntity", NpcWerioEntity);
+        pool.register("RevivalPortalEntity", RevivalPortalEntity);
         pool.register("MessageButtonEntity", MessageButtonEntity);
         pool.register("HighScoreEntity", HighScoreEntity);
+        pool.register("AltModeButtonEntity", AltModeButtonEntity);
 
         // Various key bindings for use in js\entities\entities.js
         input.bindKey(input.KEY.LEFT, "left");

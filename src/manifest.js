@@ -43,6 +43,11 @@ const DataManifest = [
         type: "tmx",
         src: "data/map/gameover.tmx"
     },
+    {
+        name: "gameover-alternate",
+        type: "tmx",
+        src: "data/map/gameover-alternate.tmx"
+    },
     {   
         name: "all-tiles",
         type: "tsx",
@@ -143,6 +148,11 @@ const DataManifest = [
         name: "WERIO",
         type:"image",
         src: "data/img/sprites/WERIO.png"
+    },
+    {
+        name: "PORTAL",
+        type:"image",
+        src: "data/img/sprites/PORTAL.png"
     },
     {
         name: "backdrop-startmenu",

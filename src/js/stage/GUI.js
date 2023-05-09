@@ -1,5 +1,5 @@
 import { GUI_Object, game, input, BitmapText, state, level, Vector2d, event } from 'melonjs';
-import { getDefaultFontSettings, startMakeshiftFlashAnimation, toggleResume } from './../renderables/entity-data.js';
+import { getDefaultFontSettings, startMakeshiftFlashAnimation, toggleResume, resetScoreAndLives, hardResetScore, resetAltModeSettings } from './../renderables/entity-data.js';
 
 /**
  * Button entity with an attached label and optional room redirection
@@ -30,6 +30,9 @@ export class MessageButtonEntity extends GUI_Object {
 
         // label is the text displayed next to the button
         this.settings.label ?? "";
+
+        // On clicking the button, the internal game state resets (score, lives, etc.)
+        this.settings.resetGameStateOnClick ?? false;
 
         // Allow this entity to continue updates when the game is paused
         this.updateWhenPaused = true;
@@ -79,6 +82,11 @@ export class MessageButtonEntity extends GUI_Object {
     // Click event
     onClick(event) {
         if (this.settings.redirect) {
+            if (this.settings.resetGameStateOnClick) {
+                resetScoreAndLives();
+                resetAltModeSettings();
+                hardResetScore();
+            }
             // Makes the game flash and then load the main game
             startMakeshiftFlashAnimation();
             level.load(this.settings.redirect);
@@ -116,5 +124,33 @@ export class HighScoreEntity extends BitmapText {
         event.on(event.CANVAS_ONRESIZE, (function(w, h){
             this.pos.set(w, h, 0).add(this.relative);
         }).bind(this));
+    }
+};
+
+/**
+ * A button on the start menu that toggles Alt Mode/Pinicchio Mode
+ */
+export class AltModeButtonEntity extends MessageButtonEntity {
+    constructor(x, y, settings) {
+        // call the super constructor
+        super(x, y, settings);
+    }
+
+    // Click event
+    onClick(event) {
+        game.data.useAltMode = !game.data.useAltMode;
+
+        if (game.data.useAltMode) {
+            this.settings.message = ["Pinocchio Mode is enabled.",
+                                     "Start the game with a massive bonus score! Plus infinite lives!",
+                                     "But each time you die, you lose more points and have to wait slightly longer to replay the level.",
+                                    ].join("\n");
+        } else {
+            this.settings.message = "Pinocchio Mode has been disabled.";
+        }
+        // Need to reset the score here, because the initial score changes based on whether Alt Mode is enabled
+        hardResetScore();
+        // Pause the game to provide time to read the messages
+        toggleResume(false, this.settings.message);
     }
 };

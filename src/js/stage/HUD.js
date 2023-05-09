@@ -1,5 +1,5 @@
 import { Container, game, event, Renderable, Vector2d, BitmapText, loader, level } from 'melonjs';
-import { getDefaultFontSettings, isGameLevel, playBGM, resetFlashBlockData, resetScoreAndLives } from './../renderables/entity-data.js';
+import { getDefaultFontSettings, isGameLevel, playBGM, resetFlashBlockData, resetScoreAndLives, resetAltModeSettings, hardResetScore } from './../renderables/entity-data.js';
 
 /**
  * a basic control to toggle fullscreen on/off
@@ -137,6 +137,12 @@ import { getDefaultFontSettings, isGameLevel, playBGM, resetFlashBlockData, rese
             // This is to ensure a second play loads a new game cleanly
             resetFlashBlockData();
             resetScoreAndLives();
+
+            // Reaching the final game over screen means it's safe to reset the Alt Mode settings for a fresh game
+            if (level.getCurrentLevel().name === "gameover") {
+                resetAltModeSettings();
+                hardResetScore();
+            }
         } else if (this.score !== game.data.score) {
             this.score = game.data.score;
             this.setText(`Brownie Points: ${this.score}`);

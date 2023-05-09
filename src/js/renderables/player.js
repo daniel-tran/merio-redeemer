@@ -79,7 +79,17 @@ class PlayerEntity extends Entity {
                 game.data.lives = 0;
                 // Go to a screen where it's more obvious that a GAME OVER has occurred.
                 startMakeshiftFlashAnimation();
-                level.load("gameover");
+
+                if (!game.data.useAltMode) {
+                    level.load("gameover");
+                } else {
+                    game.data.score -= game.data.altModePenaltyScore;
+                    game.data.altModePenaltyScore *= game.data.initialAltModePenaltyScoreScale;
+                    game.data.altModePenaltyTimer = 0;
+                    game.data.altModePenaltyTimerMax *= game.data.initialAltModePenaltyTimerScale;
+                    game.data.currentGameLevel = level.getCurrentLevel().name;
+                    level.load(game.data.altModeGameOverScreen);
+                }
             } else {
                 // Player still has lives remaining
                 level.reload();
