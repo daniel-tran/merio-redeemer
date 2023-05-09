@@ -2,7 +2,7 @@ import { Collectable, game, collision, level } from 'melonjs';
 import { detectMerio, startMakeshiftFlashAnimation, toggleResume } from './entity-data.js';
 
 /**
- * Flash block trigger entity - causes flash blocks to appear for a few seconds
+ * Portal used to retry a level
  */
 class RevivalPortalEntity extends Collectable {
     constructor(x, y, settings) {
