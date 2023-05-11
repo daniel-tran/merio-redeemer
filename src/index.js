@@ -14,7 +14,6 @@ import {
 
 import 'index.css';
 
-import TitleScreen from 'js/stage/title.js';
 import PlayScreen from 'js/stage/play.js';
 import PlayerEntity from 'js/renderables/player.js';
 import SecretCollectableEntity from 'js/renderables/collectable.js';
@@ -54,7 +53,7 @@ device.onReady(() => {
         // initial values, referenced when the game needs to be reset.
         // Note that these are not made immutable, even though they are not to be modified.
         initialScore: 0,
-        initialLives: 3,
+        initialLives: 4,
         initialFlashBlockTimer: 500,
         initialAltModePenaltyTimer: 200,
         initialAltModePenaltyTimerMax: 200,
@@ -98,7 +97,6 @@ device.onReady(() => {
     // set and load all resources.
     loader.preload(DataManifest, function() {
         // set the user defined game stages
-        state.set(state.MENU, new TitleScreen());
         const playScreenInstance = new PlayScreen();
         state.set(state.PLAY, playScreenInstance);
         
