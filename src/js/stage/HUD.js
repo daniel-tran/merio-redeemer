@@ -112,9 +112,6 @@ import { getDefaultFontSettings, isGameLevel, playBGM, resetFlashBlockData, rese
 
         this.relative = new Vector2d(x, y);
 
-        // local copy of the global score
-        this.score = -1;
-
         // Score label needs to be persistent between levels, so it is manually set up and drawn as needed
         this.scoreLabel = new BitmapText(x, y, getDefaultFontSettings());
 
@@ -143,10 +140,8 @@ import { getDefaultFontSettings, isGameLevel, playBGM, resetFlashBlockData, rese
                 resetAltModeSettings();
                 hardResetScore();
             }
-        } else if (this.score !== game.data.score) {
-            this.score = game.data.score;
-            this.setText(`Brownie Points: ${this.score}`);
-            this.isDirty = true;
+        } else {
+            this.setText(`Brownie Points: ${game.data.score}`);
         }
 
         // Update high score only when the game has "finished"
