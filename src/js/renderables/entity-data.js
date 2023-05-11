@@ -34,33 +34,6 @@ export function getPlayerMaxGravityY() {
     return 0.48;
 }
 
-// Gets the maximum vertical speed of Merio while in the gravity zone
-export function getPlayerSlowedSpeedY() {
-    return getPlayerMaxSpeedY() / 4;
-}
-
-// Gets the lessened gravity of Merio while in the gravity zone
-export function getPlayerSlowedGravityY() {
-    return getPlayerMaxGravityY() / 10;
-}
-
-// When on a moving platform, we want to be able to move around on it.
-// Use this value to make Merio slightly faster so he can move with the motion of the platform,
-// while also promoting a slight speed boost when running against it
-export function getPlayerExtendedMaxSpeedX() {
-    return getMovingPlatformMaxSpeedX() * 1.5;
-}
-
-// Gets the maximum horizontal speed of a moving platform
-export function getMovingPlatformMaxSpeedX() {
-    return 2;
-}
-
-// Gets the maximum horizontal speed of a moving platform
-export function getMovingPlatformMaxSpeedY() {
-    return 2;
-}
-
 // Gets the maximum horizontal speed of moving enemies. Conventionally, they are usually slower than the player.
 export function getEnemyMaxSpeedX() {
     return 1;

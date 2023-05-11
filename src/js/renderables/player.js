@@ -34,9 +34,6 @@ class PlayerEntity extends Entity {
         // Max jumping speed
         this.body.setFriction(0.5, 0.5);
 
-        // When riding the platform, activate logic which causes motion when idling
-        this.body.ridingplatform = false;
-
         // Make the display follow the player around on all 2D dimensions
         game.viewport.follow(this, game.viewport.AXIS.BOTH, 0.1);
         
@@ -102,22 +99,12 @@ class PlayerEntity extends Entity {
             return false;
         }
 
-        // Default speed settings when not riding on a platform,
-        // ensuring such motion changes aren't always applied.
-        if (!this.body.ridingplatform){
-            this.body.maxVel.x = getPlayerMaxSpeedX();
-        } else {
-            // Naively, this is also applied to vertical moving platforms.
-            this.body.maxVel.x = getMovingPlatformMaxSpeedX();
-        }
+        // Default speed settings
+        this.body.maxVel.x = getPlayerMaxSpeedX();
 
         if (input.isKeyPressed("left")) {
             // Flip the sprite on X axis
             this.renderable.flipX(true);
-            // Apply moving platform speed boost
-            if (this.body.ridingplatform) {
-                this.body.maxVel.x = getPlayerExtendedMaxSpeedX();
-            }
             // Move the player by inverting their X axis force
             this.body.force.x = -this.body.maxVel.x;
             // Adjust the collision box so that you can cling onto edges
@@ -128,16 +115,12 @@ class PlayerEntity extends Entity {
             this.body.ridingplatform = false;
 
             // Set the actual walking animation only when the player is physically grounded
-            if ((this.body.vel.y === 0 || this.body.ridingplatform) && !this.renderable.isCurrentAnimation("walk")) {
+            if (this.body.vel.y === 0 && !this.renderable.isCurrentAnimation("walk")) {
                 this.renderable.setCurrentAnimation("walk");
             }
         } else if (input.isKeyPressed("right")) {
              // Since the default direction is right, remove X axis flip changes
             this.renderable.flipX(false);
-            // Apply moving platform speed boost
-            if (this.body.ridingplatform) {
-                this.body.maxVel.x = getPlayerExtendedMaxSpeedX();
-            }
             // Move the player by using their X axis force
             this.body.force.x = this.body.maxVel.x;
             // Adjust the collision box so that you can cling onto edges
@@ -145,20 +128,16 @@ class PlayerEntity extends Entity {
             this.body.getShape(1).points[1].x = getRightScaledValue(this.width);
             this.body.getShape(1).points[2].x = 0;
             this.body.getShape(1).points[3].x = 0;
-            this.body.ridingplatform = false;
 
             // Set the actual walking animation only when the player is physically grounded
-            if ((this.body.vel.y === 0 || this.body.ridingplatform) && !this.renderable.isCurrentAnimation("walk")) {
+            if (this.body.vel.y === 0 && !this.renderable.isCurrentAnimation("walk")) {
                 this.renderable.setCurrentAnimation("walk");
             }
         } else {
             // Player is currently idling
-            if (!this.body.ridingplatform){
-                // When not on a moving platform, no motion is active.
-                this.body.force.x = 0;
-            }
+            this.body.force.x = 0;
             // Use the standing animation when the player is physically grounded
-            if (this.body.vel.y === 0 || this.body.ridingplatform) {
+            if (this.body.vel.y === 0) {
                 this.renderable.setCurrentAnimation("stand");
             }
         }
@@ -178,8 +157,6 @@ class PlayerEntity extends Entity {
         // Use the jump animation while airborne
         if (this.body.jumping || this.body.falling){
             this.renderable.setCurrentAnimation("jump");
-            // When airborne, the player is physically not riding the platform
-            this.body.ridingplatform = false;
         }
         
         //....
@@ -221,15 +198,6 @@ class PlayerEntity extends Entity {
                 // Player is free to pass through in any case
                 return false;
             default:
-                // Gravity zones cause strange behaviour when colliding with moving platforms.
-                // These are manual speed fix-ups that try to alleviate scenarios such as:
-                // - Jumping in the gravity zone from a moving platform while hanging on with your hair
-                // - Jumping in the gravity zone and colliding with the moving platform while in mid-air
-                if (other.name === "GravityEntity" && this.body.vel.y < 0) {
-                    this.body.force.x = 0;
-                    /** WARNING! THIS WILL PLAY THE JUMP ANIMATION WHEN HANGING FROM Y-AXIS MOVING PLATFORMS IN THE GRAVITY ZONE! **/
-                    this.renderable.setCurrentAnimation("jump");
-                }
                 // Player is free to pass through in any case
                 return false;
         }
