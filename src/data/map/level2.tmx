@@ -36,7 +36,7 @@
   <object id="110" name="SuperJumpEntity" x="6272" y="64" width="128" height="192"/>
   <object id="33" name="me.Trigger" x="6208" y="0" width="192" height="32">
    <properties>
-    <property name="duration" type="int" value="150"/>
+    <property name="duration" type="int" value="250"/>
     <property name="fade" type="color" value="#ffffffff"/>
     <property name="to" value="level3"/>
    </properties>
