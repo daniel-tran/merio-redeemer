@@ -57,6 +57,9 @@ class PlayerEntity extends Entity {
 
         // Indicates if Merio has lost a life
         this.alive = true;
+
+        // Ensure that a new level starts with fresh flash block data
+        resetFlashBlockData();
     }
 
     /**
