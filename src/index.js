@@ -101,10 +101,8 @@ device.onReady(() => {
         state.set(state.MENU, new TitleScreen());
         const playScreenInstance = new PlayScreen();
         state.set(state.PLAY, playScreenInstance);
-        state.FLASH_ANIMATION = state.USER + 1;
-        state.set(state.FLASH_ANIMATION, playScreenInstance);
         
-        // Global fading transition
+        // Global fading transition between state changes
         state.transition("fade", "#FFFFFF", 250);
 
         // add our player entity in the entity pool

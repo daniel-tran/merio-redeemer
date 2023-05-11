@@ -94,10 +94,7 @@ class PlayerEntity extends Entity {
                 // Player still has lives remaining
                 level.reload();
                 // In-built flash animation
-                game.viewport.fadeIn("#fff", 300, function(){
-                    level.reload();
-                    game.viewport.fadeOut("#fff", 150);
-                });
+                startMakeshiftFlashAnimation();
             }
             return false;
         }

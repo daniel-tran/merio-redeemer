@@ -105,15 +105,11 @@ export function playBGM() {
     }
 }
 
-// To get the flash animation played, me.state needs to change to a new value.
-// In index.js, two states are linked to the same GameScreen. So as long as the state
-// is toggled between those two states, the transition effect will always play.
+// Makes the screen flash briefly with white
 export function startMakeshiftFlashAnimation() {
-    if (state.isCurrent(state.FLASH_ANIMATION)) {
-        state.change(state.PLAY);
-    } else {
-        state.change(state.FLASH_ANIMATION);
-    }
+    game.viewport.fadeIn("#fff", 300, function(){
+        game.viewport.fadeOut("#fff", 150);
+    });
 }
 
 // Checks to see if the current room is a level that is part of the actual game.
