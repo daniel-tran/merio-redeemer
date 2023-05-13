@@ -75,10 +75,6 @@ Why is this game built on MelonJS 13.4.0 and not the current latest version?
 -------------------------------------------------------------------------------
 Starting from 14.0.0, MelonJS has changedd the way that checks are done against all the collision boxes and their interactions with the environment. This results in some strange behaviour where Merio will always drop down from a block after hanging onto an edge and moving into the adjacent wall.
 
-Credits
--------------------------------------------------------------------------------
-Special credit to West, PWL and ansimuz from [OpenGameArt.org](https://opengameart.org) for their public domain art resources.
-
 Questions, need help ?
 -------------------------------------------------------------------------------
 If you need technical support, you can contact us through the following channels :
