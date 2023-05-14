@@ -66,7 +66,7 @@ export function playBGM() {
         case "level2": expectedBGM = "theme-dessert-plains"; break;
         case "level3": expectedBGM = "theme-mist-forest"; break;
         case "level-final": expectedBGM = "theme-final"; break;
-        case "_startmenu": expectedBGM = "theme-startmenu"; break;
+        case "startmenu": expectedBGM = "theme-startmenu"; break;
         case "gameover":
         case "gameover-alternate": audio.stopTrack(); break;
     }

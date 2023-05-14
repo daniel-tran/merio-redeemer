@@ -14,9 +14,9 @@ const DataManifest = [
         src: "./data/fnt/verdana.fnt"
     },
     {   
-        name: "_startmenu",
+        name: "startmenu",
         type: "tmx",
-        src: "data/map/_startmenu.tmx"
+        src: "data/map/startmenu.tmx"
     },
     {   
         name: "level1",

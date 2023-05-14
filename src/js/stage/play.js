@@ -8,13 +8,7 @@ class PlayScreen extends Stage {
      */
     onResetEvent() {
         // Initial level to load
-        // Since levels can be restarted, the loaded level needs to vary 
-        // based on which tile set this callback is called in.
-        // As a side effect, the first level loaded is based on the first
-        // listed file in the src\data\map directory
-        // For debug purposes, you can also load a static level by providing a fixed level name
-        //level.load("level1");
-        level.load(level.getCurrentLevel().name);
+        level.load("startmenu");
 
         if (game.data.lives <= 0) {
             resetScoreAndLives();

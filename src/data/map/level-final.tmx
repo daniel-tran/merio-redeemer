@@ -24,7 +24,7 @@
    <properties>
     <property name="image" value="WERIO"/>
     <property name="messageIndex" type="int" value="12"/>
-    <property name="redirect" value="_startmenu"/>
+    <property name="redirect" value="startmenu"/>
    </properties>
   </object>
   <object id="33" name="BoxGuyEntity" x="224" y="288" width="38" height="38">

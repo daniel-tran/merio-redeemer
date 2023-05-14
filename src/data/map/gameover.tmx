@@ -30,7 +30,7 @@
   <object id="34" name="MessageButtonEntity" x="320" y="32" width="32" height="32">
    <properties>
     <property name="label" value="Accept Defeat"/>
-    <property name="redirect" value="_startmenu"/>
+    <property name="redirect" value="startmenu"/>
    </properties>
   </object>
  </objectgroup>
