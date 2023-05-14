@@ -145,8 +145,8 @@ export function toggleResume(isResuming, message) {
     }
 }
 
-// Gets all possible messages + submessages that the Box guys can display. Mostly used in the BoxGuyEntity init callback.
-export function getAllMessages() {
+// Gets all possible messages + submessages for a particular Box guy. Mostly used in the BoxGuyEntity init callback.
+export function getAllMessages(index = 0) {
     return [
         ["Merio, my boy? Is that really you?! I almost didn't recognise you with your brand new walking animations and all. And to think that you were content with sliding around the floor like a troglodyte for the last 3 games. Well, I hope you've still got the moves and/or a working keyboard because I sure don't."],
         ["Enjoy the ability to hang onto edges with your hair while you can before male pattern baldness kicks in."],
@@ -177,7 +177,7 @@ export function getAllMessages() {
          "Merio: Look, you can take these weird Brownie Points I've been picking up. You could probably cash them in for, like, a can of soda or an old boot.",
          "THANK YOU MERIO, I KNEW I COULD ALWAYS TRUST IN YOU.",
          "Merio: Now to get back to the start menu and goof around until I find something better to do with my life."],
-    ];
+    ][index];
 }
 
 // An external interface to call BoxGuyEntity.nextMessage() from entities.js

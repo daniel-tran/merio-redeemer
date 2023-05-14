@@ -41,8 +41,8 @@ class BoxGuyEntity extends Collectable {
 
         // List of all possible messages the box guy can say.
         // Select a set of responses by defining the messageIndex custom property on a BoxGuyEntity in the tilemap.
-        this.messages = getAllMessages();
-        this.messageLength = this.messages[this.settings.messageIndex].length;
+        this.messages = getAllMessages(this.settings.messageIndex);
+        this.messageLength = this.messages.length;
         // Use a subindex to detect which message in the individual sets to display
         this.messageSubIndex = -1;
         
@@ -84,7 +84,7 @@ class BoxGuyEntity extends Collectable {
         if (this.messageSubIndex >= 0 && this.messageSubIndex < this.messageLength) {
             // Pause the game to provide time to read the messages
             // Show the message using the dialog box defined in index.html
-            toggleResume(false, this.messages[this.settings.messageIndex][this.messageSubIndex]);
+            toggleResume(false, this.messages[this.messageSubIndex]);
 
             // Read the next message using the spacebar
             if (input.isKeyPressed("space")) {
