@@ -209,6 +209,11 @@ const DataManifest = [
         type: "audio",
         src: "data/bgm/"
     },
+    {
+        name: "cannonshot",
+        type: "audio",
+        src: "data/sfx/"
+    },
     {   
         name: "BUTTONS",
         type:"image",

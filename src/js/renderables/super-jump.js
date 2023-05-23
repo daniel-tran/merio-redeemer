@@ -1,4 +1,4 @@
-import { Collectable } from 'melonjs';
+import { Collectable, audio } from 'melonjs';
 import { detectMerio } from './entity-data.js';
 
 /**
@@ -24,6 +24,10 @@ class SuperJumpEntity extends Collectable {
             other.body.falling = false;
             other.body.vel.y = -other.body.maxVel.y * 1000000;
             other.body.jumping = true;
+            // Only play the cannon shot sound once to avoid it stacking while Merio is in the super jump collision box
+            if (audio.seek("cannonshot") <= 0) {
+                audio.play("cannonshot", false);
+            }
         }
         return false;
     }
