@@ -118,6 +118,7 @@ export function resetAltModeSettings() {
 export function resetFlashBlockData() {
     game.data.flashBlockTimer = game.data.initialFlashBlockTimer;
     game.data.flashBlockTimerMax = game.data.initialFlashBlockTimer;
+    game.data.flashBlockTriggerInstance = undefined;
 }
 
 // Shows/Hides the message modal from index.html and sets its main body of text

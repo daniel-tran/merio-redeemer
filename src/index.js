@@ -71,6 +71,8 @@ device.onReady(() => {
         // Indicates if flash blocks are to be rendered as usable. These are set in play.js when it realises a new game is starting
         flashBlockTimer : 0,
         flashBlockTimerMax : 0,
+        // A reference to the currently active flash block trigger
+        flashBlockTriggerInstance : undefined,
         // Flag to specify if Alt Mode is active or not
         useAltMode : false,
         // Variable to remember which level to replay after respawning in Alt Mode

@@ -32,6 +32,7 @@ class FlashBlockTriggerEntity extends Collectable {
            this.setOpacity(0);
            game.data.flashBlockTimer = 0;
            this.isSourceOfTrigger = true;
+           game.data.flashBlockTriggerInstance = this;
        }
        return false;
     }
@@ -47,6 +48,11 @@ class FlashBlockTriggerEntity extends Collectable {
        } else {
            this.setOpacity(1);
            this.isSourceOfTrigger = false;
+           // In reality, flash block triggers can be reactivated without a proper reset and results in stacked timer steps.
+           // This ensures that the exact source is deactivated in addition to this trigger to avoid such a fate.
+           if (game.data.flashBlockTriggerInstance) {
+               game.data.flashBlockTriggerInstance.isSourceOfTrigger = false;
+           }
        }
 
        // Evaluates to true if this moved or the update function was called
