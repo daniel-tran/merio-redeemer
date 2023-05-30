@@ -15,26 +15,6 @@
  </layer>
  <objectgroup id="5" name="Player">
   <object id="6" name="mainPlayer" x="32" y="32" width="48" height="48"/>
-  <object id="34" name="BoxGuyEntity" x="224" y="352" width="48" height="48">
-   <properties>
-    <property name="messageIndex" value="7"/>
-   </properties>
-  </object>
-  <object id="64" name="BoxGuyEntity" x="3040" y="0" width="48" height="48">
-   <properties>
-    <property name="messageIndex" value="8"/>
-   </properties>
-  </object>
-  <object id="90" name="BoxGuyEntity" x="5216" y="320" width="48" height="48">
-   <properties>
-    <property name="messageIndex" value="9"/>
-   </properties>
-  </object>
-  <object id="91" name="BoxGuyEntity" x="5696" y="64" width="48" height="48">
-   <properties>
-    <property name="messageIndex" value="10"/>
-   </properties>
-  </object>
  </objectgroup>
  <layer id="13" name="Foreground" width="200" height="20">
   <data encoding="base64">
@@ -142,6 +122,26 @@
   <object id="97" x="4960" y="352" width="32" height="160"/>
   <object id="102" x="2752" y="352" width="64" height="64"/>
   <object id="103" x="2816" y="288" width="32" height="96"/>
+  <object id="91" name="BoxGuyEntity" x="5696" y="64" width="48" height="48">
+   <properties>
+    <property name="messageIndex" value="10"/>
+   </properties>
+  </object>
+  <object id="90" name="BoxGuyEntity" x="5216" y="320" width="48" height="48">
+   <properties>
+    <property name="messageIndex" value="9"/>
+   </properties>
+  </object>
+  <object id="64" name="BoxGuyEntity" x="3040" y="0" width="48" height="48">
+   <properties>
+    <property name="messageIndex" value="8"/>
+   </properties>
+  </object>
+  <object id="34" name="BoxGuyEntity" x="224" y="352" width="48" height="48">
+   <properties>
+    <property name="messageIndex" value="7"/>
+   </properties>
+  </object>
  </objectgroup>
  <objectgroup id="9" name="FlashBlock">
   <object id="21" name="FlashBlockTriggerEntity" x="2784" y="320" width="32" height="32"/>

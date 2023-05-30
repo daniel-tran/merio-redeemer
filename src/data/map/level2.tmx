@@ -15,16 +15,6 @@
  </layer>
  <objectgroup id="5" name="Player">
   <object id="6" name="mainPlayer" x="32" y="32" width="48" height="48"/>
-  <object id="105" name="BoxGuyEntity" x="4384" y="64" width="48" height="48">
-   <properties>
-    <property name="messageIndex" type="int" value="5"/>
-   </properties>
-  </object>
-  <object id="107" name="BoxGuyEntity" x="6080" y="320" width="48" height="48">
-   <properties>
-    <property name="messageIndex" type="int" value="6"/>
-   </properties>
-  </object>
  </objectgroup>
  <layer id="13" name="Foreground" width="200" height="20">
   <data encoding="base64">
@@ -234,6 +224,16 @@
   <object id="93" name="FlashBlockEntity" x="5600" y="384" width="96" height="32">
    <properties>
     <property name="active" type="bool" value="false"/>
+   </properties>
+  </object>
+  <object id="107" name="BoxGuyEntity" x="6080" y="320" width="48" height="48">
+   <properties>
+    <property name="messageIndex" type="int" value="6"/>
+   </properties>
+  </object>
+  <object id="105" name="BoxGuyEntity" x="4384" y="64" width="48" height="48">
+   <properties>
+    <property name="messageIndex" type="int" value="5"/>
    </properties>
   </object>
  </objectgroup>
