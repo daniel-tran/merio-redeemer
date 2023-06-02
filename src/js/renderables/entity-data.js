@@ -166,7 +166,7 @@ export function getAllMessages(index = 0) {
         ["Whoowee! I totally didn't question your ability to get to this point, so good on you!",
          "To get to the last cannon, you'll have to pass by these pudgy looking bears. They've got a weird thing going, so I suggest watching them for a bit to find a good way to get past them without being jumped on."],
 
-        ["There he is, just standing there menacingly. Press the DOWN key to talk to him when you get close enough."],
+        ["There he is, just standing there menacingly. Get close enough to hear the crazed ramblings of a mad man."],
         ["Merio: Hopefully it was worth being shot out of a cannon 3 times to hear what you have to say...",
          "RIGHTO, I WILL KEEP THIS CONCISE BECAUSE I KNOW YOU HAVE A TERRIBLE ATTENTION SPAN.",
          "VEhJUyBNSUdIVCBCRSBUSEUgTEFTVCBHQU1FIFlPVSBXSUxMIEVWRVIgU1RBUiBJTiwgQlVUIFlPVSBXRVJFIEEgR1JFQVQg\nSEVSTyBBTkQgV0lMTCBJTlNQSVJFIFRIRSBORVhUIEdFTkVSQVRJT04gVE8gRE8gRVZFTiBNT1JFIEhBSVItVEFDVUxBUiBGRUFUUy4=",

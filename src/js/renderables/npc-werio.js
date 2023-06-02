@@ -12,7 +12,7 @@ class NpcWerioEntity extends BoxGuyEntity {
 
     onCollision(response, other) {
         // Only react when the player is in range and interacts with this entity
-        if (detectMerio(other.name) && input.isKeyPressed("interact")) {
+        if (detectMerio(other.name)) {
             // Print out specific messages from the list of possible messages
             this.messageSubIndex = 0;
         }
