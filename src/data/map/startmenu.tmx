@@ -30,7 +30,9 @@
     <property name="label" value="Controls"/>
     <property name="message">Use the ARROW keys to move around.
 Press UP to jump.
-Both the &gt;&gt; button and SPACEBAR can be used to read message prompts.</property>
+Both the &gt;&gt; button and SPACEBAR can be used to read message prompts.
+
+On mobile devices, on-screen buttons are used instead of the ARROW keys.</property>
    </properties>
   </object>
   <object id="35" name="HighScoreEntity" x="320" y="448" width="32" height="32"/>

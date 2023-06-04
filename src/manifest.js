@@ -219,6 +219,11 @@ const DataManifest = [
         type:"image",
         src: "data/img/gui/BUTTONS.png"
     },
+    {
+        name: "ONSCREENCONTROLS",
+        type:"image",
+        src: "data/img/gui/ONSCREENCONTROLS.png"
+    },
 ];
 
 export default DataManifest;

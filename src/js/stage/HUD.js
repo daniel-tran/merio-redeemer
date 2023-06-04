@@ -1,4 +1,4 @@
-import { Container, game, event, Renderable, Vector2d, BitmapText, loader, level } from 'melonjs';
+import { Container, game, event, Renderable, Vector2d, BitmapText, loader, level, GUI_Object, input, device } from 'melonjs';
 import { getDefaultFontSettings, isGameLevel, playBGM, resetFlashBlockData, resetScoreAndLives, resetAltModeSettings, hardResetScore } from './../renderables/entity-data.js';
 
 /**
@@ -89,6 +89,64 @@ import { getDefaultFontSettings, isGameLevel, playBGM, resetFlashBlockData, rese
 //        return false;
 //    }
 //};
+
+class OnScreenControlButton extends GUI_Object {
+    /**
+     * constructor
+     */
+    constructor(x, y, keyBind) {
+        const spriteWidth = 64;
+        const spriteHeight = 64;
+        super(x, y, {
+            image: "ONSCREENCONTROLS",
+            framewidth: spriteWidth,
+            frameheight: spriteHeight,
+            width: spriteWidth,
+            height: spriteHeight,
+        });
+        this.key = keyBind;
+
+        this.opacityOff = 0.5;
+        this.opacityOn = 0.75;
+        this.setOpacity(this.opacityOff);
+        this.anchorPoint.set(0, 0);
+
+        // Default sprites are based on the left button
+        // Otherwise, select the sprites based on the key binding
+        let spriteIndexOff = 0;
+        let spriteIndexOn = 1;
+        if (keyBind === input.KEY.RIGHT) {
+            spriteIndexOff = 2;
+            spriteIndexOn = 3;
+        } else if (keyBind === input.KEY.UP) {
+            spriteIndexOff = 4;
+            spriteIndexOn = 5;
+        }
+        this.addAnimation("off", [spriteIndexOff]);
+        this.addAnimation("on", [spriteIndexOn]);
+        this.setCurrentAnimation("off");
+    }
+
+    /**
+     * function called when the object is clicked on
+     */
+    onClick(event) {
+        this.setOpacity(this.opacityOn);
+        input.triggerKeyEvent(this.key, true);
+        this.setCurrentAnimation("on");
+        return false;
+    }
+
+    /**
+     * function called when the object is clicked off
+     */
+    onRelease(event) {
+        this.setOpacity(this.opacityOff);
+        input.triggerKeyEvent(this.key, false);
+        this.setCurrentAnimation("off");
+        return false;
+    }
+};
 
 /**
  * a basic HUD item to display score
@@ -208,6 +266,24 @@ class UIContainer extends Container {
         // add our child score object at position
         this.addChild(new ScoreItem(0, 0));
         this.addChild(new LifeItem(game.viewport.width, 8));
+        if (device.isMobile) {
+            const onScreenControlButtonY = game.viewport.height - 100;
+            this.addChild(new OnScreenControlButton(
+                game.viewport.width - 125,
+                onScreenControlButtonY,
+                input.KEY.UP
+            ));
+            this.addChild(new OnScreenControlButton(
+                50,
+                onScreenControlButtonY,
+                input.KEY.LEFT
+            ));
+            this.addChild(new OnScreenControlButton(
+                150,
+                onScreenControlButtonY,
+                input.KEY.RIGHT
+            ));
+        }
 
         // add our audio control object
         //this.addChild(new AudioControl(36, 56));
