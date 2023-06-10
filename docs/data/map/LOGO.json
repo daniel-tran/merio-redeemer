@@ -1,0 +1,14 @@
+{ "columns":1,
+ "image":"..\/img\/gui\/LOGO.png",
+ "imageheight":117,
+ "imagewidth":540,
+ "margin":0,
+ "name":"LOGO",
+ "spacing":0,
+ "tilecount":1,
+ "tiledversion":"1.3.1",
+ "tileheight":117,
+ "tilewidth":540,
+ "type":"tileset",
+ "version":1.2
+}

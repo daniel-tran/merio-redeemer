@@ -8,7 +8,7 @@ require("@babel/register");
 module.exports = {
 	entry: "./src/index.js",
 	output: {
-		path: __dirname + "/public",
+		path: __dirname + "/docs",
 		filename: "bundle.js",
 	},
 	module: {
@@ -67,9 +67,9 @@ module.exports = {
 			devMode: "webapp", // optional can be 'webapp' or 'light' - 'light' by default
 			favicons: {
 				appName: "MERIO Redeemer",
-				appDescription: "Join Merio on yet another hair-raising thrill-ride of vaguely quantifiable proportions!",
+				appDescription: "Join Merio on yet another (possibly final?) hair-raising thrill-ride of vaguely quantifiable proportions!",
 				developerName: "Team Plectrum",
-				developerURL: "http://www.melonjs.org", // prevent retrieving from the nearest package.json
+				developerURL: "https://github.com/daniel-tran", // prevent retrieving from the nearest package.json
 				icons: {
 					coast: false,
 					yandex: false,
@@ -88,7 +88,7 @@ module.exports = {
 	},
 	devServer: {
 		static: {
-			directory: path.join(__dirname, "public"),
+			directory: path.join(__dirname, "docs"),
 		},
 		compress: true,
 		hot: true,

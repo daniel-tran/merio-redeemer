@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.2" tiledversion="1.3.1" orientation="orthogonal" renderorder="right-down" compressionlevel="0" width="20" height="15" tilewidth="32" tileheight="32" infinite="0" nextlayerid="14" nextobjectid="41">
+ <tileset firstgid="1" source="all-tiles.json"/>
+ <tileset firstgid="17" source="LOGO.json"/>
+ <imagelayer id="10" name="Background">
+  <image source="../img/backdrop/backdrop-gameover.png" width="32" height="480"/>
+  <properties>
+   <property name="repeat" value="repeat-x"/>
+  </properties>
+ </imagelayer>
+ <layer id="1" name="Tiles" width="20" height="15">
+  <data encoding="base64">
+   AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAABAAAAAQAAAAEAAAA
+  </data>
+ </layer>
+ <objectgroup id="11" name="Button">
+  <object id="34" name="MessageButtonEntity" x="320" y="32" width="32" height="32">
+   <properties>
+    <property name="label" value="Accept Defeat"/>
+    <property name="redirect" value="startmenu"/>
+    <property name="resetGameStateOnClick" type="bool" value="true"/>
+   </properties>
+  </object>
+  <object id="40" name="me.BitmapText" x="320" y="96" width="32" height="32">
+   <properties>
+    <property name="font" value="Verdana"/>
+    <property name="text">GAME OVER! Sort of...
+
+Just wait for that portal to
+
+materialise and you're good to go!
+
+Or you can rush straight in, but beware
+
+that it will be your last life if you do so.</property>
+    <property name="textAlign" value="center"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup id="5" name="Player">
+  <object id="35" name="mainPlayer" x="288" y="192" width="48" height="48"/>
+ </objectgroup>
+ <objectgroup id="2" name="Collision">
+  <object id="36" x="0" y="448" width="640" height="32"/>
+  <object id="38" x="-32" y="0" width="32" height="480"/>
+  <object id="39" x="640" y="0" width="32" height="480"/>
+ </objectgroup>
+ <objectgroup id="9" name="FlashBlock"/>
+ <objectgroup id="6" name="NextLevel">
+  <object id="37" name="RevivalPortalEntity" x="512" y="320" width="128" height="128"/>
+ </objectgroup>
+ <objectgroup id="7" name="Enemy"/>
+</map>
