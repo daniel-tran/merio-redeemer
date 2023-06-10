@@ -9,8 +9,8 @@ class OnScreenControlButton extends GUI_Object {
      * constructor
      */
     constructor(x, y, keyBind) {
-        const spriteWidth = 64;
-        const spriteHeight = 64;
+        const spriteWidth = 128;
+        const spriteHeight = 128;
         super(x, y, {
             image: "ONSCREENCONTROLS",
             framewidth: spriteWidth,
@@ -181,19 +181,21 @@ class UIContainer extends Container {
         this.addChild(new ScoreItem(0, 0));
         this.addChild(new LifeItem(game.viewport.width, 8));
         if (device.isMobile) {
-            const onScreenControlButtonY = game.viewport.height - 100;
+            const onScreenControlButtonY = game.viewport.height - 130;
+            const leftButtonX = 30;
+            const rightButtonX = leftButtonX + 140;
             this.addChild(new OnScreenControlButton(
                 game.viewport.width - 125,
                 onScreenControlButtonY,
                 input.KEY.UP
             ));
             this.addChild(new OnScreenControlButton(
-                50,
+                leftButtonX,
                 onScreenControlButtonY,
                 input.KEY.LEFT
             ));
             this.addChild(new OnScreenControlButton(
-                150,
+                rightButtonX,
                 onScreenControlButtonY,
                 input.KEY.RIGHT
             ));
