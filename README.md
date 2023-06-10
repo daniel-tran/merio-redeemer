@@ -1,8 +1,14 @@
-# MERIO Redeemer
+![MERIO Redeemer](https://github.com/daniel-tran/merio-redeemer/blob/main/src/data/img/gui/LOGO.png)
 
 Join Merio on yet another (possibly final?) hair-raising thrill-ride of vaguely quantifiable proportions!
 
 Made using melonJS 13.4.0
+
+## Play from the Internet
+
+For the first time, you don't have to download some sketchy executable file to play the game! With a working Internet connection, you can play the game using the following link:
+
+https://daniel-tran.github.io/merio-redeemer/
 
 ## Usage
 
