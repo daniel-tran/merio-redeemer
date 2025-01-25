@@ -255,17 +255,17 @@
     <property name="timerStep" type="float" value="3"/>
    </properties>
   </object>
-  <object id="51" name="FlashBlockTriggerEntity" x="2656" y="480" width="32" height="32">
+  <object id="51" name="FlashBlockTriggerEntity" x="2784" y="416" width="32" height="32">
    <properties>
     <property name="timerStep" type="float" value="3"/>
    </properties>
   </object>
-  <object id="53" name="FlashBlockTriggerEntity" x="2848" y="480" width="32" height="32">
+  <object id="53" name="FlashBlockTriggerEntity" x="2880" y="480" width="32" height="32">
    <properties>
     <property name="timerStep" type="float" value="3"/>
    </properties>
   </object>
-  <object id="55" name="FlashBlockTriggerEntity" x="2752" y="416" width="32" height="32">
+  <object id="55" name="FlashBlockTriggerEntity" x="2688" y="448" width="32" height="32">
    <properties>
     <property name="timerStep" type="float" value="3"/>
    </properties>
